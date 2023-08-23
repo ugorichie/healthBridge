@@ -313,7 +313,7 @@
         </div>
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+            <img src="images/doc1.jpg" alt="">
           </div>
         </div>
 
@@ -338,21 +338,21 @@
       <div class="row">
         <div class="col-lg-4 col-md-5 offset-md-1">
           <div class="form_container">
-            <form action="">
+            <form action="" id="paymentForm">
               <div>
-                <input type="text" placeholder="Your Full-Name" />
+                <input type="text" id="first-name" placeholder="First Name" />
               </div>
               <div>
-                <input type="text" placeholder="Phone Number" />
+                <input type="text" id="last-name" placeholder="Last Name" required/>
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" id="email-address" placeholder="Email" required />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="tel" id="amount" placeholder="amount in naira" required/>
               </div>
               <div >
-                <input type="button" value="PAY"  class=" btn btn-danger text-white">
+                <input type="button" value="PAY"  class=" btn btn-danger text-white" onclick="payWithPaystack()">
                 
                 
               </div>
@@ -361,7 +361,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section id="testimonial">
 
   <!-- end payment gateway section -->
 
@@ -382,7 +382,7 @@
               <div class="col-md-10 mx-auto">
                 <div class="box">
                   <div class="img-box">
-                    <img src="images/client.jpg" alt="">
+                    <img src="images/te1.jpg" alt="">
                   </div>
                   <div class="detail-box">
                     <div class="client_info">
@@ -409,7 +409,7 @@
               <div class="col-md-10 mx-auto">
                 <div class="box">
                   <div class="img-box">
-                    <img src="images/client.jpg" alt="">
+                    <img src="images/te2.jpg" alt="">
                   </div>
                   <div class="detail-box">
                     <div class="client_info">
@@ -436,7 +436,7 @@
               <div class="col-md-10 mx-auto">
                 <div class="box">
                   <div class="img-box">
-                    <img src="images/client.jpg" alt="">
+                    <img src="images/te3.jpg" alt="">
                   </div>
                   <div class="detail-box">
                     <div class="client_info">
@@ -610,37 +610,13 @@
                 <a class="" href="service.html">Services</a>
                 <a class="" href="about.html"> About</a>
                 <a class="" href="project.html">Project</a>
-                <a class="" href="testimonial.html">Testimonial</a>
+                <a class="" href="#testimonial">Testimonial</a>
                 <a class="" href="contact.html">Contact Us</a>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
-            <div class="info_post">
-              <h5>
-                INSTAGRAM FEEDS
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-              </div>
-            </div>
+            
           </div>
           <div class="col-md-4">
             <div class="info_form">
@@ -695,7 +671,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        <a href="">Health Bridge</a>
       </p>
     </div>
   </footer>
@@ -719,6 +695,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
+  <script src="js/payment.js"></script>
+  <!-- payment js -->
 
 </body>
 
