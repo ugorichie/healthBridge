@@ -1040,7 +1040,7 @@ a:focus {
 }
 
 .info_section .contact_nav a:hover {
-  color: #f07b26;
+  color: red;
 }
 
 .info_section .info_top {
@@ -1068,7 +1068,7 @@ a:focus {
 }
 
 .info_section .info_links .info_links_menu a:hover, .info_section .info_links .info_links_menu a.active {
-  color: #f07b26;
+  color: red;
 }
 
 .info_section .info_post .post_box {
@@ -1127,7 +1127,7 @@ a:focus {
 .info_section .info_form button {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #f07b26;
+  background-color: red;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all .3s;
@@ -1136,7 +1136,7 @@ a:focus {
 }
 
 .info_section .info_form button:hover {
-  background-color: #bc570d;
+  background-color: red;
 }
 
 .info_section .info_bottom .row {
@@ -1175,7 +1175,7 @@ a:focus {
   border-radius: 100%;
   width: 35px;
   height: 35px;
-  color: #f07b26;
+  color: red;
   font-size: 18px;
   margin-right: 10px;
 }

@@ -81,7 +81,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
-              <img src="images/logo.png" alt="">
+              <h3 style="font-family:'Times New Roman', Times, serif; color: red;"> H.B</h3>
             </a>
             </a>
 
@@ -338,7 +338,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-5 offset-md-1">
           <div class="form_container">
-            <form action="" id="paymentForm">
+            <form  id="paymentForm">
               <div>
                 <input type="text" id="first-name" placeholder="First Name" />
               </div>
@@ -352,9 +352,8 @@
                 <input type="tel" id="amount" placeholder="amount in naira" required/>
               </div>
               <div >
-                <input type="button" value="PAY"  class=" btn btn-danger text-white" onclick="payWithPaystack()">
-                
-                
+                <button type="submit" class=" btn btn-danger text-white" onclick="payWithPaystack()"> PAY </button>  
+                 
               </div>
             </form>
           </div>
@@ -581,19 +580,19 @@
         <a href="">
           <i class="fa fa-phone" aria-hidden="true"></i>
           <span>
-            Call : +01 123455678990
+             07062353627
           </span>
         </a>
         <a href="">
           <i class="fa fa-envelope" aria-hidden="true"></i>
           <span>
-            Email : demo@gmail.com
+            info@healthbridge.com
           </span>
         </a>
         <a href="">
           <i class="fa fa-map-marker" aria-hidden="true"></i>
           <span>
-            Location
+             Herbeth Road 15, Baker Street. Kings Ave. Uk.
           </span>
         </a>
       </div>
@@ -606,12 +605,12 @@
                 QUICK LINKS
               </h4>
               <div class="info_links_menu">
-                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="" href="service.html">Services</a>
-                <a class="" href="about.html"> About</a>
-                <a class="" href="project.html">Project</a>
+                <a class="" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="" href="#services">Services</a>
+                <a class="" href="#about"> About</a>
+                <a class="" href="#payment">Payment</a>
                 <a class="" href="#testimonial">Testimonial</a>
-                <a class="" href="contact.html">Contact Us</a>
+                <a class="" href="#contact">Contact Us</a>
               </div>
             </div>
           </div>
@@ -635,13 +634,7 @@
       </div>
       <div class="info_bottom">
         <div class="row">
-          <div class="col-md-2">
-            <div class="info_logo">
-              <a href="">
-                <img src="images/logo2.png" alt="">
-              </a>
-            </div>
-          </div>
+          
           <div class="col-md-4 ml-auto">
             <div class="social_box">
               <a href="">
@@ -697,6 +690,55 @@
   <!-- End Google Map -->
   <script src="js/payment.js"></script>
   <!-- payment js -->
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <!-- paystack-api -->
+  <script> 
+
+    var paymentForm = document.getElementById('paymentForm');
+
+    paymentForm.addEventListener('submit', payWithPaystack, false);
+
+    function payWithPaystack(e) {
+            e.preventDefault();
+    var handler = PaystackPop.setup({
+
+        key: 'pk_test_5c7a89b6ba213e8358ed171e1a7ff553e9edd1d9', // Replace with your public key
+
+        email: document.getElementById('email-address').value,
+
+        amount: document.getElementById('amount').value * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+
+        currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
+
+        ref:'<?php echo time();?>', // Replace with a reference you generated
+
+        callback: function(response) {
+
+        //this happens after the payment is completed successfully
+
+        var reference = response.reference;
+
+        alert('Payment complete! Reference: ' + reference);
+
+        // Make an AJAX call to your server with the reference to verify the transaction
+
+        },
+
+        onClose: function() {
+
+        alert('Transaction was not completed, window closed.');
+
+        },
+
+    });
+
+    handler.openIframe();
+
+    }
+
+
+</script>
 
 </body>
 

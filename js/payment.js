@@ -1,3 +1,5 @@
+
+
 //intergrating paystack api
 var paymentForm = document.getElementById('paymentForm');
 
@@ -15,7 +17,7 @@ var handler = PaystackPop.setup({
 
     currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
 
-    ref: '<?php echo time();?>', // Replace with a reference you generated
+    ref: currentTime.getSeconds(), // Replace with a reference you generated
 
     callback: function(response) {
 
